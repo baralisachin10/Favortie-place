@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:favorite_places/providers/user_places.dart';
 import 'package:favorite_places/widgets/image_input.dart';
+import 'package:favorite_places/widgets/location_input.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -18,7 +19,7 @@ class _AddNewPlaceScreenState extends ConsumerState<AddNewPlaceScreen> {
   void _savePlace() {
     final enteredTitle = _titleController.text;
 
-    if (enteredTitle.isEmpty|| _selectedImage == null) {
+    if (enteredTitle.isEmpty || _selectedImage == null) {
       return;
     }
 
@@ -65,6 +66,11 @@ class _AddNewPlaceScreenState extends ConsumerState<AddNewPlaceScreen> {
               },
             ),
 
+            // location input
+            const SizedBox(
+              height: 10,
+            ),
+            const LocationInput(),
             // button to add place
             const SizedBox(
               height: 16,
